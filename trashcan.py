@@ -10,7 +10,7 @@ def load_env(path=".env"):
 	env = {}
 	with open(path) as f:
 		for line in f:
-			print(line)
+			# print(line)
 			if '=' in line and not line.startswith('#'):
 				key, val = line.strip().split('=', 1)
 				env[key] = val
@@ -30,8 +30,7 @@ def techo(s):
 	return print("[" + dt_clean + "] " + str(s))
 
 def send_mail(message, subject, recepients=None):
-
-	techo(f"RECEPIENTS: {recipients}")
+	# techo(f"RECEPIENTS: {recipients}")
 	if recepients is None:
 		raise Exception("No recepients were passed to a function!")
 
