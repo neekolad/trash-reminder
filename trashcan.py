@@ -29,20 +29,6 @@ def techo(s):
 	dt_clean = dt.strftime("%d-%m-%Y %H:%M:%S")
 	return print("[" + dt_clean + "] " + str(s))
 
-def send_mail2(message, subject, recipients=None):
-	# techo(f"MESSAGE: {message}")
-	# techo(f"SUBJECT: {subject}")
-	# techo(f"RECEPIENTS: {recipients}")
-	if recipients is None:
-		raise Exception("No recepients were passed to a function!")
-
-	for recipient in recipients:
-		subprocess.run(
-			['mail', '-a', 'Content-Type: text/html', '-s', subject, recipient],
-			input = message.encode('utf-8'),
-			check = True
-		)
-
 def send_mail(message, subject, recepients=None):
 
 	techo(f"RECEPIENTS: {recipients}")
@@ -76,9 +62,6 @@ def make_message(body, color):
 		</html>
 		"""
 	return message
-
-# RECIPIENTS = ["neekolad@gmail.com", "vesnadespic@gmail.com", "momcilodespic@gmail.com", "milosdespic@gmail.com"]
-# RECIPIENTS = ["neekolad@gmail.com", "homeserver1notifications@gmail.com"]
 
 
 today = datetime.now()
