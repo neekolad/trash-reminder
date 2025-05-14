@@ -6,7 +6,7 @@ import os
 
 # Load environment variables from .env file
 # basic .env parser without external libraries
-def load_env(path=".env"):
+def load_env(path="/home/nikola/projects/trash-can/.env"):
 	env = {}
 	with open(path) as f:
 		for line in f:
